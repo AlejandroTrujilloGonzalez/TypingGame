@@ -40,18 +40,20 @@ public class Typer : MonoBehaviour
 
     private void CheckInput()
     {
+        //Mobile
         if (keyboard.text.Length >= 1)
         {
             string keysPressed = keyboard.text;
             Debug.Log(keysPressed);
-            keyboard.text = "";
-            EnterLetter(keysPressed);         
+            EnterLetter(keysPressed);
+            keyboard.text = "";          
         }
 
+        //PC
         //if (Input.anyKeyDown)
         //{
         //    string keysPressed = Input.inputString;
-
+        //    Debug.Log(keysPressed);
         //    if (keysPressed.Length == 1)
         //    {
         //        EnterLetter(keysPressed);
@@ -79,7 +81,7 @@ public class Typer : MonoBehaviour
 
     private void RemoveLetter()
     {
-        string newString = remainingWord.Remove(0);
+        string newString = remainingWord.Remove(0, 1);
         SetRemainingWord(newString);
     }
 
