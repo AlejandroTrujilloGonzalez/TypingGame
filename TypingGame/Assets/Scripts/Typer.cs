@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Typer : MonoBehaviour
 {
-    public Text wordOutput = null;
+    public WordBank wordBank;
+    public Text wordOutput;
 
     private TouchScreenKeyboard keyboard;
 
-    private string remainingWord = string.Empty;
-    private string currentWord = "testing";
+    private string remainingWord;
+    private string currentWord;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +20,9 @@ public class Typer : MonoBehaviour
         SetCurrentWord();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckInput();
-    }
-
     private void SetCurrentWord()
     {
-        //Get bank word
+        currentWord = wordBank.GetWord();
         SetRemainingWord(currentWord);
 
     }
@@ -36,6 +31,12 @@ public class Typer : MonoBehaviour
     {
         remainingWord = newString;
         wordOutput.text = remainingWord;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        CheckInput();
     }
 
     private void CheckInput()
