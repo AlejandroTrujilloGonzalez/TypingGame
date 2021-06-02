@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331392344085030731, guid: 4f616e0b9435cd042aaf33f1910782c2, type: 3}
       propertyPath: m_Name
-      value: Spawner (1)
+      value: SpawnerL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f616e0b9435cd042aaf33f1910782c2, type: 3}
@@ -1128,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331392344085030731, guid: 4f616e0b9435cd042aaf33f1910782c2, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: SpawnerR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f616e0b9435cd042aaf33f1910782c2, type: 3}
