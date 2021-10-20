@@ -8,7 +8,8 @@ public class WordBank : MonoBehaviour
     //Try to do the list with firebase or a text file
     private List<string> OriginalWords = new List<string>()
     {
-        "probando", "escribe", "dale"
+        "probando", "escribe", "dale", "vacas", "tejer", "miedo",
+        "joya", "pararratos", "cargar", "ebanista", "oeste"
     };
 
     private List<string> WorkingWords = new List<string>();

@@ -71,8 +71,8 @@ public class Typer : MonoBehaviour
             if (IsWordComplete())
             {
                 SetCurrentWord();
-                //AUMENTAR PUNTUACION
-                //DISPARAR FLECHA
+                //earn score
+                //shoot fireballs
 
             }
         }
