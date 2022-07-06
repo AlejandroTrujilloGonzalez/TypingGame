@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Typer : MonoBehaviour
 {
+
     public WordBank wordBank;
-    public Text wordOutput;
+
+    public TextMeshProUGUI wordOutput;
+    public TMP_InputField wordInput;
 
     private TouchScreenKeyboard keyboard;
 
@@ -41,56 +44,14 @@ public class Typer : MonoBehaviour
 
     private void CheckInput()
     {
-        //Mobile
-        if (keyboard.text.Length >= 1)
+        if (wordInput.text == wordOutput.text)
         {
-            string keysPressed = keyboard.text;
-            Debug.Log(keysPressed);
-            EnterLetter(keysPressed);
-            keyboard.text = "";          
-        }
-
-        //PC
-        //if (Input.anyKeyDown)
-        //{
-        //    string keysPressed = Input.inputString;
-        //    Debug.Log(keysPressed);
-        //    if (keysPressed.Length == 1)
-        //    {
-        //        EnterLetter(keysPressed);
-        //    }
-        //}
-    }
-
-    private void EnterLetter(string typedLetter)
-    {
-        if (IsLetterCorrect(typedLetter))
-        {
-            RemoveLetter();
-
-            if (IsWordComplete())
-            {
-                SetCurrentWord();
-                //earn score
-                //shoot fireballs
-
-            }
+            wordInput.text = "";
+            SetCurrentWord();
+            //earn score
+            //shoot fireballs
         }
     }
 
-    private bool IsLetterCorrect(string letter)
-    {
-        return remainingWord.IndexOf(letter) == 0;
-    }
 
-    private void RemoveLetter()
-    {
-        string newString = remainingWord.Remove(0, 1);
-        SetRemainingWord(newString);
-    }
-
-    private bool IsWordComplete()
-    {
-        return remainingWord.Length == 0;
-    }
 }
