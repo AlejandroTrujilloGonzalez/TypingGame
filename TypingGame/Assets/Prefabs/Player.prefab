@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5780314419912177392}
   - component: {fileID: 9087597820722615129}
   - component: {fileID: 927389992}
-  - component: {fileID: 5780314419756543960}
+  - component: {fileID: 562514851}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.007918805, y: -0.0019797087}
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5780314419756543960
+--- !u!114 &562514851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,14 +141,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5780314419912177395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c390c6a47ad6c6742aab4346bd91bf67, type: 3}
+  m_Script: {fileID: 11500000, guid: e863394370821f2489a4cd3e5d118b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  nHearts: 3
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 4215476436535466920, guid: 1a877c7286a792947a0f1c5ab8b2e453, type: 3}
-  emptyHeart: {fileID: 4786751650841761533, guid: 1a877c7286a792947a0f1c5ab8b2e453, type: 3}
+  playerLife: 3
+  nHearts: 0
+  hearts: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
+  blinkColor: {r: 0, g: 0, b: 0, a: 0}
+  regularColor: {r: 0, g: 0, b: 0, a: 0}
+  blinkDuration: 0
+  nOfBlinks: 0
+  triggerCollider: {fileID: 0}
+  playerSprite: {fileID: 0}

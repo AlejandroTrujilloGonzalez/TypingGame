@@ -23,6 +23,12 @@ public class Typer : MonoBehaviour
         SetCurrentWord();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        CheckInput();
+    }
+
     private void SetCurrentWord()
     {
         currentWord = wordBank.GetWord();
@@ -34,12 +40,6 @@ public class Typer : MonoBehaviour
     {
         remainingWord = newString;
         wordOutput.text = remainingWord;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CheckInput();
     }
 
     private void CheckInput()

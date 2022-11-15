@@ -1,27 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthSystem : MonoBehaviour
+public class PlayerController
 {
-    [SerializeField]
-    int health;
-    public int nHearts;
+    private PlayerModel model;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-
-    private void Update()
+    public PlayerController(int playerLife)
     {
-        health = GameManager.instance.health;
+        model = new PlayerModel(playerLife);
+    }
 
-        //Check that health never be greater than number of hearts
-        if (health > nHearts)
-        {
-            health = nHearts;
-        }
+    public void HeartSystem(int health, int nHearts, Image[] hearts, Sprite fullHeart, Sprite emptyHeart)
+    {
+
+        if (health > nHearts)        
+            health = nHearts;        
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -29,7 +22,8 @@ public class HealthSystem : MonoBehaviour
             if (i < health)
             {
                 hearts[i].sprite = fullHeart;
-            } else
+            }
+            else
             {
                 hearts[i].sprite = emptyHeart;
             }
@@ -44,5 +38,15 @@ public class HealthSystem : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+    }
+
+    public int GetLifes()
+    {
+        return model.PlayerLife;
+    }
+
+    public void DecreaseLifes()
+    {
+        model.PlayerLife--;
     }
 }

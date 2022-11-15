@@ -22,13 +22,13 @@ public class BasicEnemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.position, step);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            GameManager.instance.health--;
-            Destroy(gameObject); //this will be better with a object pool
-            Debug.Log("hit");
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        GameManager.instance.health--;
+    //        Destroy(gameObject); //this will be better with a object pool
+    //        Debug.Log("hit");
+    //    }
+    //}
 }
